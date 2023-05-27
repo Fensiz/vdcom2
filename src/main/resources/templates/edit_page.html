@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Страница редактирования записи</title>
+  <div>
+    <h1>Редактирование записи</h1>
+    <form th:each="entity : ${entities}" method="post">
+      <input type="text" name="nameParam" th:value="${entity.name}" placeholder="Введите имя" class="form-control">
+      <input type="text" name="addressParam" th:value="${entity.address}" placeholder="Введите адрес" class="form-control">
+      <input type="text" name="phoneParam" th:value="${entity.phone}" placeholder="Введите телефон" class="form-control">
+      <button type="submit">Изменить запись</button>
+    </form>
+  </div>
+</head>
+<body>
+
+</body>
+</html>

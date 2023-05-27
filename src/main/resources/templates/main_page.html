@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Getting Started: Serving Web Content</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <table border="1">
+            <caption>Адресная книга</caption>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Адрес</th>
+                <th>Телефон</th>
+            </tr>
+            <tr th:each="entity : ${entities}">
+                <td th:text="${entity.id}" />
+                <td th:text="${entity.name}" />
+                <td th:text="${entity.address}" />
+                <td th:text="${entity.phone}" />
+                <td>
+                    <a th:href="'/' + ${entity.id} + '/edit'">Редактировать</a>
+                    <a th:href="'/' + ${entity.id} + '/remove'">Удалить</a>
+                </td>
+            </tr>
+
+        </table>
+        <div>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/add">Добавить</a>
+                <a href="/upload">Загрузить из CSV</a>
+            </nav>
+        </div>
+    </body>
+</html>
